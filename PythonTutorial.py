@@ -16,6 +16,16 @@ def f2(a, *args, **kwargs):
 	keys = sorted(kwargs.keys())
 	for kwarg in keys:
 		print("Kwarg:", kwarg)
-		
 
 f2("hello", "This", "is", "a", "list", of="of", keyword="keyword", arguments="arguments")
+
+# Lamba expressions
+
+def sort_by_value(map):
+	map.sort(key=lambda pair:pair[1])
+	
+map = [(1, "one"), (2, "two"), (3, "three"), (4, "four")]
+
+print(map)
+sort_by_value(map)
+print(map)

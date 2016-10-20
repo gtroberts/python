@@ -29,3 +29,23 @@ map = [(1, "one"), (2, "two"), (3, "three"), (4, "four")]
 print(map)
 sort_by_value(map)
 print(map)
+
+
+def do(f, a, b):
+	return f(a, b)
+
+a, b = 2, 3
+print(a, "+", b, "=", do(lambda x, y: x + y, a, b))
+print(a, "*", b, "=", do(lambda x, y: x * y, a, b))
+print(a, "/", b, "=", do(lambda x, y: x / y, a, b))
+
+def make_doer(a, b):
+	return lambda f: do(f, a, b)
+	
+doer = make_doer(a, b)
+
+import operator
+
+print(a, "+", b, "=", doer(operator.add))
+print(a, "*", b, "=", doer(operator.mul))
+print(a, "/", b, "=", doer(operator.truediv))

@@ -49,3 +49,32 @@ import operator
 print(a, "+", b, "=", doer(operator.add))
 print(a, "*", b, "=", doer(operator.mul))
 print(a, "/", b, "=", doer(operator.truediv))
+
+# List comprehensions
+
+# Transpose
+
+matrix = [	[1, 2, 3, 4],
+			[5, 6, 7, 8],
+			[9,10,11,12]	]
+			
+matrixT = [ [ row[i] for row in matrix ] for i in range(4) ]
+
+print("M", matrix)
+print("MT", matrixT)
+
+# sets
+
+s = {1, 2, 3, 4, 5, 1, 2, 3, 6, 4, 6, 7, 89, 9, 6, 5, 4, 5, 6, 7}
+
+print(s, "elements:" ,len(s), "should be:", 9)
+
+# dictionary iteration
+
+d = { "one":1, "two":2, "three":3, "four":4, "five":5 }
+
+for k, v in d.items():
+	print(k, v)
+	
+
+
